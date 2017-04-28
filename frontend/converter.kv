@@ -1,0 +1,223 @@
+<CustomDrop@DropDown>:
+        Button:
+                text: 'AUD'
+                size_hint_y: None
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'BGN'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'BRL'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'CAD'
+                size_hint_y: None
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'CHF'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'CNY'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'CZK'
+                size_hint_y: None
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'DKK'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'GBP'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'HKD'
+                size_hint_y: None
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'HRK'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'HUF'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'IDR'
+                size_hint_y: None
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'ILS'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'INR'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'JPY'
+                size_hint_y: None
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'KRW'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'MXN'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'MYR'
+                size_hint_y: None
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'NOK'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'NZD'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'PHP'
+                size_hint_y: None
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'PLN'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'RON'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'RUB'
+                size_hint_y: None
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'SEK'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'SGD'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'THB'
+                size_hint_y: None
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'TRY'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'ZAR'
+                size_hint_y: None
+                width: 50
+                height: 20
+                on_release: root.choose_currency(self.text)
+        Button:
+                text: 'EUR'
+                size_hint_y: None
+                height: 20
+                on_release: root.choose_currency(self.text)
+
+<ConvertorGridLayout>:
+        id: converter
+        rows: 3
+        padding: 20
+        spacing: 20
+
+        BoxLayout:
+                orientation: "horizontal"
+                AnchorLayout:
+                        padding: -20
+                        Label:
+                                text: "USD"
+                                font_size: 20
+                                size_hint_y: None
+                AnchorLayout:
+                        padding: 50, 0,50,0
+                        Button:
+                                id: butt
+                                text: root.currency
+                                font_size: 20
+                                size_hint_y: None
+                                height: "30dp"
+                                on_release: root.open_drop()
+
+        BoxLayout:
+                AnchorLayout:
+                        TextInput:
+                                id: input
+                                font_size: 20
+                                multiline: False
+                AnchorLayout:
+                        padding: -20
+                        Label:
+                                id: result
+                                text: root.result
+                                font_size: 20
+                                size_hint_y: None
+                                height: 20
+        AnchorLayout:
+                padding: 50, 0,50,0
+                Button:
+                        text: "Calculate"
+                        font_size: 20
+                        size_hint_y: None
+                        height: "40dp"
+                        on_release: root.convert(input.text)
