@@ -3,7 +3,7 @@ from service.str.str_service import RegularExpressionService
 
 
 class FixerParser(object):
-    GET_REQEST = 'http://api.fixer.io/latest?base=USD'
+    HTTP_GET_REQEST = 'http://api.fixer.io/latest?base=USD'
 
     def get_current_value(self, name):
         """
@@ -19,8 +19,7 @@ class FixerParser(object):
     def __parse_currency(self):
         """
         @param r:       a object response from get-request
-        @param name:    a string representation of name of currency
         @return:        a string representation of the json response which include the reference rates according to USD
         """
-        r = requests.get(self.GET_REQEST, auth=('user', 'pass'))
+        r = requests.get(self.HTTP_GET_REQEST, auth=('user', 'pass'))
         return str(r.json())
