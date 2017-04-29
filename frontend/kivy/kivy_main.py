@@ -5,7 +5,7 @@ from kivy.properties import StringProperty
 from kivy.uix.dropdown import DropDown
 from kivy.uix.gridlayout import GridLayout
 
-from service.web.parser import FixerParser
+from service.converter.converter import Converter
 
 
 class ConvertorGridLayout(GridLayout):
@@ -18,21 +18,13 @@ class ConvertorGridLayout(GridLayout):
         """
         self.drop_down = CustomDrop()
         self.drop_down.open(self.ids.butt)
-        self.drop_down.root = self
+        self.drop_down.root = self #send this object in the child class to make changes
 
     def convert(self, sum):
         """
-        @param sum:        a string representation of input data
-        @param parser:     the object representation of the service to getting values of reference rates
-        @param difference: a float representation of reference rate
         @param result:     a string representation of the converted data
         """
-        parser = FixerParser()
-        try:
-            difference = parser.get_current_value(self.currency)
-            self.result = str(float(sum) * difference)
-        except ValueError:
-            self.result = '0.0'
+        self.result = Converter.convert(sum, self.currency)
 
 
 class CustomDrop(DropDown):
