@@ -3,12 +3,14 @@ from service.converter.converter import Converter
 
 class ConverterApp(object):
 
+    EXIT_COMAND = 'e'
+
     @staticmethod
     def check_to_exit(sum, currency):
         """
         @return:   the boolean representation of available exit comand
         """
-        return sum == 'e' or currency == 'e'
+        return sum == ConverterApp.EXIT_COMAND or currency == ConverterApp.EXIT_COMAND
 
     @staticmethod
     def run():
